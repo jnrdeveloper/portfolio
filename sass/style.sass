@@ -1,0 +1,876 @@
+@import 'base/normalize'
+@import 'modules/extends'
+@import 'plugins/plugins'
+@import 'base/config'
+@import 'animation/animation'
+@import 'spinner'
+@import 'media-query/media-query'
+
+body
+	font-family: 'Raleway', sans-serif
+	color: $emperor
+
+header
+	//height: 640px
+	background: url(../img/header/tree.jpg) center center
+	background-size: cover
+	background-position-y: 100%
+    @include filter(grayscale(50%))
+    padding-bottom: 18%
+
+
+.logo
+    //background: url(../img/header/brand-two.png) no-repeat
+	float: left
+	margin: 30px 0 0 30px
+    text-decoration: none
+    color: $white
+    font-size: rem(30)
+    font-weight: $font-weight--light
+    text-shadow: 1px 1px 1px rgba(0,0,0,.1)
+
+nav
+	float: right
+	padding: 30px 30px 0 0
+
+nav a
+	display: inline-block
+	margin-right: 20px
+	font-weight: $font-weight--light
+	font-size: rem(24)
+	color: $white
+	text-transform: uppercase
+	text-decoration: none
+
+h1
+	text-align: center
+	font-size: rem(72)
+	font-weight: $font-weight--thin
+	color: $white
+	text-transform: uppercase
+	text-shadow: 2px 2px 2px darken($black,1)
+	letter-spacing: .5em
+	margin-bottom: 20px
+	clear: both
+	padding-top: 160px
+
+.artist
+
+	display: inline-block
+	padding: .2em .5em
+	border: 2px solid $white
+
+.kicker
+	text-align: center
+	font-weight: 400
+	text-transform: uppercase
+	text-shadow: 2px 2px 2px darken($black,1)
+	letter-spacing: .5rem
+	color: $white
+	line-height: 1
+
+@media (max-width: 640px)
+	// header
+	.logo
+		margin-left: 259px
+		font-size: rem(25)
+		
+	nav
+		float: none
+		text-align: center
+		padding-top: 80px
+		
+		& a
+			font-size: rem(18)
+			margin-right: -17px
+		
+	
+	// section about myself	
+	h1
+		padding-top: 0px
+		font-size:rem(35)
+	
+	.kicker
+		font-size: rem(14)
+	
+	h3
+		padding: 50px 0 40px
+		font-size: rem(16)
+	
+	.blurb
+		position: relative
+		top: -100px
+		font-size: rem(14)
+	
+	.skill-lockup
+		position: relative
+		top: -90px
+		left: 191px
+	
+
+
+/* 3D rolling links*/
+
+.nav-effect a
+	line-height: 44px
+	@include perspective(1000px)
+
+.nav-effect a span
+	position: relative
+	display: inline-block
+	padding: 0px 14px
+	/*background: #9b59b6*/
+	@include transition(transform $trns-duration)
+	@include transform-origin(50% 0)
+	@include transform-style(preserve-3d)
+
+.nav-effect a span::before
+	position: absolute
+	top: 100%
+	left: 14px
+	width: 100%
+	height: 100%
+	color: $white
+	/*background: #0965a0*/
+	content: attr(data-hover)
+	@include transition(background $trns-duration)
+	@include transform(rotateX(-86deg))
+	@include transform-origin(50% 0)
+
+.nav-effect a:hover span,
+.nav-effect a:focus span
+	@include transform(rotateX(90deg) translateY(-22px))
+	
+
+.nav-effect a:hover span::before,
+.nav-effect a:focus span::before
+	color: $white
+
+
+/* Personality / About */
+
+h3
+	@extend %about
+
+@media screen and (max-width: 400px)
+	h3
+		padding: 50px 0 50px
+	
+
+.face-lockup
+	max-width: 1200px
+	margin: 0 0 0 120px
+	@include display(flex)
+	/*flex-wrap: wrap*/
+
+.icon
+	margin: 10px
+
+strong
+	color: $emperor
+	font-weight: $font-weight--ultra-medium
+
+.face-img
+	position: relative
+	right: 6px
+	top: 8px
+	background: url(../img/about/new--photo.jpg) no-repeat
+	flex: 1 0 auto
+	@include order (3)
+	height: 143px
+	border-radius: $br--round
+	margin-right: 94px
+	max-width: 143px
+
+.icon-mouse
+	//background: url(../img/about/mouse.png) no-repeat 
+	flex: 1 0 auto
+	@include order (2)
+	//width: 0px
+	//height: 117px
+	//border-radius: $br--round
+    //background: $silver
+
+.icon-pencil
+	//background: url(../img/about/pencil.png) no-repeat	
+	flex: 1 0 auto
+	@include order (1)
+	//width: 0px
+	//height: 146px
+	//border-radius: $br--round
+    //background: $silver
+    
+
+.icon-browser
+	//background: url(../img/about/browser.png) no-repeat 
+	flex: 1 0 auto
+	@include order (4)
+	//width: 0px
+	//height: 117px
+	//border-radius: $br--round
+    //background: $silver
+
+.icon-video
+	//background: url(../img/about/video.png) no-repeat 
+	flex: 1
+	@include order (5)
+	//width: 0px
+	//height: 117px
+	//border-radius: $br--round
+    //background: $silver
+
+.icon-mouse, .icon-pencil, .icon-browser, .icon-video
+	position: relative
+	top: 25px
+	height: 126px
+	width: 0px
+	margin: 48px
+	border-radius: $br--round
+	cursor: pointer
+
+.svg:hover .svg-fill
+	fill: $cod-gray 
+	cursor: pointer
+
+#Layer_1 
+	position: relative
+	top: -10px
+	left: -10px
+	//width: 90px
+	//height: 90px
+
+.blurb
+	max-width: 620px
+	padding: 0 15px
+	margin: 50px auto
+	font-size: 1.25rem
+	text-align: center
+	font-weight: $font-weight--light
+	color: $emperor
+
+.blurb a
+	text-decoration: none
+	color: $silver
+
+.blurb a
+	line-height: 44px
+	@include perspective(1000px)
+
+.blurb a span
+	position: relative
+	display: inline-block
+	/*background: #9b59b6*/
+	@include transition(transform $trns-duration)
+	@include transform-origin(50% 0)
+	@include transform-style(preserve-3d)
+
+.blurb a:hover span, .blurb a:focus span
+	@include transform(rotateX(90deg) translateY(-22px))	
+
+.blurb a:hover span::before,
+.blurb a:focus span::before
+	color: $grey
+
+.blurb a span::before
+	position: absolute
+	top: 100%
+	width: 100%
+	height: 100%
+	color: $grey
+	content: attr(data-hover)
+	@include transition(background $trns-duration)
+	@include transform(rotateX(-90deg))
+	@include transform-origin(50% 0)
+
+
+@media screen and (max-width: 640px) 
+	.face-lockup
+		display: block
+		//text-align: center
+	
+	.icon
+		display: inline-block
+		width: 100px
+		text-align: center
+	
+	.face-img
+		position: relative
+		display: block
+		left: 120px
+		margin-bottom: 20px
+		height: 131px
+		width: 130px
+	
+	[class$='video']
+		position: relative
+		top: -30px
+	
+	[class$='browser']
+		position: relative
+		top: -30px
+	
+
+.skill-lockup
+	max-width: 700px
+	margin: 100px auto
+	color: $dusty-gray
+	margin-right: 19%
+
+.skill-unit
+	width: 350px
+	float: left
+
+.skill-icons
+	font-size: 0
+	margin: 0 0 30px
+	margin-top: 2px
+
+.skill-icons span
+	display: inline-block
+	background: $emperor
+	height: 16px
+	width: 16px
+	margin-right: 5px
+	border-radius: $br--round
+
+.skill-icons span:after
+	content: ''
+	display: block
+	height: 14px
+	width: 14px
+	background: $white
+	border-radius: $br--round
+	margin: 1px
+	text-align: center
+
+.clearfix:after 
+     visibility: hidden
+     display: block
+     font-size: 0
+     content: " "
+     clear: both
+     height: 0
+
+@for $i from 1 through 10
+	.skill-lockup .skill-icons.skill-#$i span:nth-child(n+#$i + 1) @extend %skill-color
+ 
+ 
+
+@media screen and (max-width: 541px)
+	.skill-lockup
+		width: 270px
+		text-align: center
+	
+
+
+/* Work */
+
+.alt-section
+	background: $mystic
+
+.section-work
+	overflow-X: hidden
+
+.work-belt
+	width: 200%
+	background: $cod-gray
+	position: relative
+	left: 0%
+    @include transition(all 800ms)
+
+.thumb-wrap, .work-wrap
+	width: 50%
+	float: left
+
+.thumb-container
+	max-width: 1200px
+	margin: 0 auto
+	padding-bottom: 100px
+	@include clearfix
+	
+	.thumb-unit
+		position: relative
+		display: block
+		@extend %background
+		float: left
+		padding-top: 18%
+		overflow: hidden
+		cursor: pointer
+		@include perspective(300)
+		
+		@media screen and (max-width:760px)
+			width: 50%
+			padding-top: 26%
+		
+		.thumb-overlay
+			height: 100%
+			background: fade-out($emperor,.2)
+			text-align: center
+			opacity: 0
+			@include transition(opacity 300ms, ease-in, 500ms)
+			@include position(absolute, 0% 0px 0px 0px)
+			@include display(flex)
+			@include align-items(center)
+			@include justify-content(space-around)
+			@include transform (matrix3d(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1))
+			
+			strong
+				display: block
+				padding: 0 20px
+				color: $white
+				font-weight: $font-weight--light
+				text-transform: uppercase
+				font-size: rem(24)
+				line-height: 1.2
+			
+
+		&:hover .thumb-overlay
+			@extend %animation
+			opacity: 1
+		
+	
+		
+
+.thumb-one
+	background: url(../img/work/thumb-one.jpg)
+
+.thumb-two
+	background: url(../img/work/thumb-two.jpg)
+
+.thumb-three
+	background: url(../img/work/thumb-three.jpg)
+
+.thumb-four
+	background: url(../img/work/thumb-four.jpg)
+
+.thumb-five
+	background: url(../img/work/thumb-five.jpg)
+
+.thumb-six
+	background: url(../img/work/thumb-six.jpg)
+
+.thumb-seven
+	background: url(../img/work/thumb-seven.jpg)
+
+.thumb-eight
+	background: url(../img/work/thumb-eight.jpg)
+
+.zoom-icon
+	background: url(../img/work/magnify-glass.png) no-repeat
+	background-position: center center
+	position: absolute
+	width: 20%
+	height: 20%
+	top: 70%
+	right: 40%
+	margin: 0 auto
+
+.work-container
+	max-width: 600px
+	margin: 0 auto
+    position: relative
+    display: none
+	
+	h4
+		color: $emperor
+		font-weight: $font-weight--light
+		font-size: rem(24)
+		line-height: 1.2
+		text-transform: uppercase
+        margin: 0 0 20px
+	
+
+	img
+		max-width: 100%
+		margin-bottom: 20px
+	
+
+.work-return
+	background: url(../img/work/back-btn-one.png) no-repeat
+	@include size(66px)
+	cursor: pointer
+	@include position(absolute, -4px 580px null null)
+	
+@media (max-width: 740px)
+    .work-container
+        .work-return
+            left: 0px
+        
+       h4
+        margin-left: 60px
+    
+
+.proj-one
+    background: url(../img/proj-one/img1.jpg)no-repeat
+    height: 300px
+    margin-bottom: 30px
+
+.proj-two
+    background: url(../img/proj-one/img2.jpg)no-repeat
+    height: 300px
+    margin-bottom: 30px
+
+.proj-three
+    background: url(../img/proj-one/img3.jpg)no-repeat
+    height: 300px
+    margin-bottom: 30px
+
+.proj-four
+    background: url(../img/proj-one/img4.jpg)no-repeat
+    height: 300px
+    margin-bottom: 30px
+
+.proj-five
+    background: url(../img/proj-one/img5.jpg)no-repeat
+    height: 300px
+    margin-bottom: 30px
+
+
+/* clients */
+
+.section-clients
+	position: relative
+
+
+// i need to fix something here to be able to use my 
+// arrow left and right, probable it is &.active-client
+// because when a delete them it is work fine.
+
+.clients-belt
+	width: 100%
+	position: relative
+	
+	.client-unit
+		position: relative
+		max-width: 750px
+		margin: 50px auto
+		@include display(flex)
+		display: none
+		
+		&.active-client
+			@include display(flex)
+			@extend %animation
+		
+		
+		.client-face
+			min-width: 300px
+			text-align: center
+			
+			img
+				max-width: 100px
+				border-radius: $br--round
+			
+			
+			.client-name
+				display: block
+				text-transform: uppercase
+				font-weight: $font-weight--medium
+				list-style: 1px
+			
+
+			.client-title
+				font-style: normal
+				font-size: rem(14)
+				color: $silver
+			
+		
+		.client-content
+			position: relative
+			font-size: rem(18)
+			line-height: 36px
+			font-weight: $font-weight--light
+			color: $silver
+			margin-top: -10px
+		
+	
+
+
+/* client logos */
+
+.clients-logo
+		position: relative
+		max-width: 750px
+		margin: 50px auto 100px
+		@include display(flex)
+		@include align-items(center)
+		@include justify-content(space-around)
+		
+	.client-logo
+		width: 148px
+		height: 80px	
+		max-width: 200px
+		background-size: contain
+		background-position: center bottom
+		cursor: pointer
+		margin: 0 20px
+		padding: 10px
+		border-bottom: 2px solid transparent
+		opacity: .5
+		
+		&.active-client
+			border-bottom: 2px solid lighten($cod-gray,1)
+            @include transition(all 900ms)
+            opacity: 1
+		
+	
+
+.logo-one
+	background: url(../img/client/logo1.png)no-repeat
+
+.logo-two
+	background: url(../img/client/logo2.png)no-repeat
+
+.logo-three
+	background: url(../img/client/logo3.png)no-repeat
+
+.logo-four
+	background: url(../img/client/logo4.png)no-repeat
+
+.client-quote-mark
+	@include position(absolute, 8px null null -15px)
+	z-index: -1
+	opacity: 0.3
+		
+	path
+		fill: $silver
+		
+
+.client-controls
+	@include position(absolute, 0px 0px 0px 0px)
+	
+	/*.clients-control 
+		> div
+			@include size(40px)
+			margin-top: -20px
+		
+	*/
+
+	.client-control-next
+		@include position (absolute, 220px 35px null null)	
+		cursor: pointer		
+	
+	.client-control-prev
+		@include position (absolute, 220px null null 50px)
+		cursor: pointer
+	
+
+.control:hover .control-fill
+	fill: $cod-gray
+	cursor: pointer
+
+
+/* Clients Mobile Nav */
+
+/*.clients-mobile-nav
+	text-align: center
+	display: none
+	
+	span
+		cursor: pointer
+		display: inline-block
+		@include size(16px)
+		border-radius: $br--round
+		border: 1px solid $silver
+		margin: 0 10px	
+		
+		&.active-client
+			border-color: $cod-gray
+		
+	
+
+
+@media (max-width: 750px)
+	.client-controls
+		display: none
+	
+	.clients-belt
+		
+		.client-unit.active-client
+			display: block
+			position: relative
+			margin-left: 0px
+			left: auto
+			
+			.client-face
+				margin-bottom: 20px
+			
+			.client-content
+				padding: 0 30px	
+				max-width: 400px
+				margin: 0 auto
+			
+			.client-quote-mark
+				top: -10px
+				left: 15px
+			
+		
+	//.clients-logo
+	//	display: none
+	//	
+	//.clients-mobile-nav
+	//	display: block
+	//	
+	
+*/
+
+/* Contact */
+
+.section-contact
+	text-align: center
+	height: 580px
+	
+
+
+.social-links
+	max-width: 700px
+	margin: 0px auto 50px
+	@include display(flex)
+	@include align-items(center)
+	@include justify-content(space-around)
+	@include flex-wrap(wrap)
+	
+	a
+		display: block
+		border: 2px solid lighten($emperor,1)
+		border-radius: $br--round
+		margin: 20px
+		//margin-bottom: 70px
+		line-height: 80px
+		@include transition(all, 500ms)
+		@include size(80px)
+		
+	
+
+.social
+	position: relative
+	top: 14px
+	left: 0px
+	
+	&:hover 
+		fill: $silver
+		@include transform(scale(1.2))
+	
+
+.bar
+	width: 250px
+	height: 0px
+	border: 1px solid $cod-gray
+	margin: 0px auto 50px
+
+[href^='mailto']
+	font-size:rem(75)!important
+	text-decoration: none
+	font-weight: $font-weight--ultra-thin 
+	font-family: $font-url--google
+	color: lighten($cod-gray, 9)
+	line-height: 1
+	@include transition(all, 500ms)
+	
+	&:hover
+		color: $silver
+	
+
+
+/* Forms */
+
+.section-form
+	height: 646px
+
+form
+	max-width: 550px
+	margin: 0 auto 50px
+	
+	input, textarea
+		border: 1px solid $silver
+		width: 100%
+		@include box-sizing(border-box)
+		padding: 10px
+		color: $silver
+		
+			.submit-wrap
+				text-align: right
+			
+		
+		&:focus
+			outline: none
+			border-color: $dusty-gray
+            box-shadow: 0 0 1px darken($silver, 1)
+		
+	
+
+	.contact-info-group
+		input
+			width: 50%
+			float: left
+			@include box-sizing(border-box)
+			color: $silver
+										
+			&:nth-child(1)
+				padding-right: 10px
+				width: 272px
+				margin-right: 8px
+			
+			&:nth-child(2)
+				padding-left: 10px
+				width: 270px
+				
+			
+		
+		&:nth-child(1)
+				color: $silver
+			
+	
+	
+	input
+		display: block
+		margin-bottom: 10px
+	
+
+
+
+/* Footer */
+
+footer
+	height: 200px
+	width: 100%
+	background: url(../img/header/tree.jpg) center center
+	background-size: cover
+	background-position-y: 85%
+
+.lockup
+	margin: 30px
+
+#lockup .logo
+	//background: url(../img/header/brand-three.png) no-repeat
+	float: left
+	margin: 80px 20px 0px 20px
+    font-size: rem(20)
+    color: $white
+    font-weight: $font-weight--thin
+    //text-shadow: 1px 1px 1px darken($black,1)
+
+
+.content-wrap nav
+	float: left
+	text-decoration: none
+	margin-top: 74px
+
+.content-wrap nav a
+	color: $white
+	font-size: em(16)
+	//text-shadow: 1px 1px 1px darken($black,1)
+
+.content-wrap nav a:hover
+	color: lighten($white,1)
+
+
+p.copyright
+	position: relative
+	clear: both
+	top: -10px
+	font-weight: $font-weight--thin 
+	color: $white
+	margin-left: 116px
+	padding-top: 20px
+	//text-shadow: 1px 1px 1px darken($black,1)
+
