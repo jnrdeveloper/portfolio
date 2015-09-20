@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  background: url(../img/ocean_landscapes_beach_australia.jpg)no-repeat center center fixed;
+  background: url(../img/Flinders-Street-passing-Federation-Square-and-Flinders-Street-1024x683_two.png)no-repeat center center fixed;
   background-size: cover;
 }
 header .logo {
@@ -31,7 +31,7 @@ h2 {
 .my_logo_one {
   position: relative;
   left: 31.4%;
-  bottom: -8px;
+  bottom: 1px;
   width: 35.8%;
 	}
 }
@@ -45,7 +45,7 @@ h2 {
 	.my_logo_one {
   	position: relative;
   	left: 30.6%;
-  	bottom: 56px;
+  	bottom: 69px;
   	width: 35.8%;
 	}
 }
