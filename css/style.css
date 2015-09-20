@@ -20,3 +20,33 @@ img.my_logo {
 h2 {
   float:right;
 }
+/*--------=== Small Desktop ===---------*/
+
+@media only screen and (min-width: 1280px){
+	img.my_logo {
+  	top: 72px;	
+  	margin: 0 -.4%;	
+  }
+
+.my_logo_one {
+  position: relative;
+  left: 31.4%;
+  bottom: -8px;
+  width: 35.8%;
+	}
+}
+
+/*--------=== Ultrabook ===---------*/
+@media only screen and (min-width: 1366px){
+	img.my_logo {
+  	top: 72px;
+  	margin: 0 .8%;
+	}
+	.my_logo_one {
+  	position: relative;
+  	left: 30.6%;
+  	bottom: -10px;
+  	width: 35.8%;
+	}
+}
+
