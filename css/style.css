@@ -45,8 +45,16 @@ h2 {
 	.my_logo_one {
   	position: relative;
   	left: 30.6%;
-  	bottom: 69px;
+  	top: 226px;
   	width: 35.8%;
 	}
+	a.rotate {
+  	position: absolute;
+  	top: 60px;
+  	left: 76%;
+	}
+header .logo {
+  top: -242px;
+  }
 }
 
