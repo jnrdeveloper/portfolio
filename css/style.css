@@ -23,6 +23,23 @@
 .video_aus{
   margin-bottom: 20px
 }
+hr {
+  max-width: 154px;
+  border-color: #333;
+  border-width: 3px;
+}
+a{
+  color: #333;
+}
+a:hover, a:focus {
+  color: #333;
+}
+img.my_logo {
+  position: relative;
+  z-index: 2;
+  width: 500px;
+  opacity: .8;
+}
 /*.container.social_link {
   margin-top: 60px;
 } 
@@ -31,4 +48,3 @@
     margin-top: 10px;
   }
 }*/ 
-}
