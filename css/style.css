@@ -37,7 +37,7 @@ a:hover, a:focus {
 img.my_logo {
   position: relative;
   z-index: 2;
-  width: 500px;
+  width: 400px;
   opacity: .8;
 }
 /*.container.social_link {
@@ -48,3 +48,25 @@ img.my_logo {
     margin-top: 10px;
   }
 }*/ 
+  
+@media (max-width: 767px) {
+  img.my_logo {
+    width: 100px;
+  }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+  img.my_logo {
+    width: 100px;
+  }
+}
+@media (min-width: 992px) and (max-width: 1199px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .hidden-lg {
+    display: none !important;
+  }
+} 
+
