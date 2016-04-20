@@ -100,3 +100,8 @@ img.my_logo {
   }
 } 
 
+@media (min-width: 1440px){
+  .page-scroll>img {
+    top: 300px;
+  }
+}
