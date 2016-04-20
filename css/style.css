@@ -23,6 +23,9 @@
 .video_aus{
   margin-bottom: 20px
 }
+section.video_hipster{
+  padding: 0;
+}
 hr {
   max-width: 154px;
   border-color: #333;
@@ -40,6 +43,15 @@ img.my_logo {
   width: 400px;
   opacity: .8;
 }
+.page-scroll>img{
+  position: relative;
+  top: 140px;
+  -webkit-animation:arrow 1s ease-in-out infinite;
+  z-index: 4;
+}
+
+@-webkit-keyframes arrow{50%{-webkit-transform:translatey(-10px);}}
+
 /*.container.social_link {
   margin-top: 60px;
 } 
@@ -47,21 +59,39 @@ img.my_logo {
     .container.social_link {
     margin-top: 10px;
   }
-}*/ 
+}*/
   
 @media (max-width: 767px) {
   img.my_logo {
     width: 100px;
+  }
+  h2.section-heading.bottom_h2 {
+    font-size: 30px!important;
+  } 
+  p.experience{
+    font-size: 20px!important;
+  }
+  .page-scroll>img{
+    bottom: 10px;
   }
 }
 @media (min-width: 768px) and (max-width: 991px) {
   img.my_logo {
     width: 100px;
   }
+  h2.section-heading.bottom_h2 {
+    font-size: 30px!important;
+  }
+  p.experience{
+    font-size: 20px!important;
+  }
 }
 @media (min-width: 992px) and (max-width: 1199px) {
   .hidden-md {
     display: none !important;
+  }
+  h2.section-heading.bottom_h2 {
+    font-size: 30px;
   }
 }
 @media (min-width: 1200px) {
